@@ -16,7 +16,7 @@ import com.example.demo.domain.Item;
 import com.example.demo.service.ItemService;
 
 @Controller
-@RequestMapping("/item")
+@RequestMapping("/items")
 public class ItemController {
 	
 	@Autowired
