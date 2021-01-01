@@ -63,12 +63,12 @@ public class ItemController {
 			return "edit";
 		} else {
 			item.setId(id);
-			itemService.save(item);
+			itemService.update(item);
 			return "redirect:/items";
 		}
 	}
 	
-	@DeleteMapping("{id}")
+	@PostMapping("{id}/delete")
 	public String delete(@PathVariable Long id) {
 		itemService.delete(id);
 		return "redirect:/items";

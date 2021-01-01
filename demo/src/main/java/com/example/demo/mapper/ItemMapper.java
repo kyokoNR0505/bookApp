@@ -24,7 +24,7 @@ public interface ItemMapper {
 	 * @param id ID
 	 * @return アイテム
 	 */
-	Item findone(Long id);
+	Item findOne(Long id);
 	
 	/**
 	 * 保存.

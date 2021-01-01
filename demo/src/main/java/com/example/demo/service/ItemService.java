@@ -38,7 +38,7 @@ public class ItemService {
 	 */
 	@Transactional
 	public Item findOne(Long id) {
-		return itemMapper.findone(id);
+		return itemMapper.findOne(id);
 	}
 	
 	/**
