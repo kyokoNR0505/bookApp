@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.StockMapper">
+
+    <select id="findByItemId" resultType="com.example.demo.domain.Stock">
+        select 
+             stock.id
+            ,stock.itemId
+            ,stock.shopId
+            ,ShopMaster.name as shopName
+            ,stock.amount
+        from stock 
+            left join ShopMaster
+            on ShopMaster.id = stock.shopId
+        where itemId=#{itemId}
+    </select>
+
+</mapper>

@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.ItemMapper">
-  <select id="findAll" resultType="com.example.demo.domain.Item">
-    select * from ItemMaster
-  </select>
 
-  <select id="findOne" resultType="com.example.demo.domain.Item">
-    select * from ItemMaster where id=#{id}
-  </select>
+    <select id="findByKeyword" resultType="com.example.demo.domain.Item">
+        select * from ItemMaster where name like '%${str}%'
+    </select>
 
-  <insert id="save" useGeneratedKeys="true" keyProperty="id">
-    insert into ItemMaster(name, price, author) values(#{name}, #{price}, #{author})
-  </insert>
+    <select id="findOne" resultType="com.example.demo.domain.Item">
+        select * from ItemMaster where id=#{id}
+    </select>
 
-  <update id="update">
-    update ItemMaster set name=#{name}, price=#{price}, author=#{author} where id=#{id}
-  </update>
-
-  <delete id="delete">
-    delete from ItemMaster where id=#{id}
-  </delete>
 </mapper>

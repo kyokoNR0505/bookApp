@@ -1,26 +1,17 @@
 package com.example.demo.domain;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
-
 public class Item {
 	
 	/** ID. */
 	private Long id;
 	
 	/** 商品名. */
-	@NotBlank(message="商品名を入力してください。")
 	private String name;
 	
 	/** 金額. */
-	@Min(value=10, message="10以上の数値を入力してください。")
-	@Max(value=10000, message="10000以下の数値を入力してください。")
 	private float price;
 	
 	/** 著者名. */
-	@Size(max=50, message="著者名は50文字を超えないでください。")
 	private String author;
 	
 	/**

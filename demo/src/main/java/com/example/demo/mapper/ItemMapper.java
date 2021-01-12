@@ -14,10 +14,11 @@ import com.example.demo.domain.Item;
 public interface ItemMapper {
 
 	/**
-	 * 全検索.
+	 * キーワード検索検索.
+	 * @param str キーワード
 	 * @return アイテムリスト
 	 */
-	List<Item> findAll();
+	List<Item> findByKeyword(String str);
 	
 	/**
 	 * 一件検索.
@@ -25,22 +26,5 @@ public interface ItemMapper {
 	 * @return アイテム
 	 */
 	Item findOne(Long id);
-	
-	/**
-	 * 保存.
-	 * @param item アイテム
-	 */
-	void save(Item item);
-	
-	/**
-	 * 更新.
-	 * @param item アイテム
-	 */
-	void update(Item item);
-	
-	/**
-	 * 削除.
-	 * @param id ID
-	 */
-	void delete(Long id);
+
 }

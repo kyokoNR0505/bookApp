@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+<title>商品一覧</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/top">TOP</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">新商品登録</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">新店舗登録</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h4>商品検索</h4>
+            <form th:action="@{/top/itemSearch}" th:method="post" th:object="${searchForm}">
+                <div class="form-group">
+                    <input th:field="*{itemName}" type="text" class="form-control" id="inputItemName" placeholder="商品名を入力してください">
+                    <div class="text-danger" th:if="${#fields.hasErrors('itemName')}" th:errors="*{itemName}"></div>
+                </div>
+                <input type="submit" value="検索" class="btn btn-primary"></input>
+            </form>
+        </div>
+    </div>
+    <script src="/js/jquery-3.5.1.slim.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

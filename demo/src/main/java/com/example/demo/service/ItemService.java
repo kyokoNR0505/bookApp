@@ -23,12 +23,13 @@ public class ItemService {
 	private ItemMapper itemMapper;
 	
 	/**
-	 * 全検索.
-	 * @return アイテムリスト
+	 * キーワード検索.
+	 * @param str キーワード
+	 * @return アイテム
 	 */
 	@Transactional
-	public List<Item> findAll() {
-		return itemMapper.findAll();
+	public List<Item> findByKeyword(String str) {
+		return itemMapper.findByKeyword(str);
 	}
 	
 	/**
@@ -40,31 +41,5 @@ public class ItemService {
 	public Item findOne(Long id) {
 		return itemMapper.findOne(id);
 	}
-	
-	/**
-	 * 保存.
-	 * @param item アイテム
-	 */
-	@Transactional
-	public void save(Item item) {
-		itemMapper.save(item);
-	}
-	
-	/**
-	 * 更新.
-	 * @param item アイテム
-	 */
-	@Transactional
-	public void update(Item item) {
-		itemMapper.update(item);
-	}
-	
-	/**
-	 * 削除.
-	 * @param id ID
-	 */
-	@Transactional
-	public void delete(Long id) {
-		itemMapper.delete(id);
-	}
+
 }
