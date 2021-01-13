@@ -1,11 +1,16 @@
 package com.example.demo.form;
 
+import java.math.BigDecimal;
+
 import javax.validation.constraints.Positive;
 
 public class StockArriveForm {
 	
 	/** 商品ID. */
 	private Long itemId;
+	
+	/** 税抜き価格. */
+	private BigDecimal price;
 	
 	/** 店舗ID. */
 	private Long shopId;
@@ -34,6 +39,22 @@ public class StockArriveForm {
 	 */
 	public void setItemId(Long itemId) {
 		this.itemId = itemId;
+	}
+	
+	/**
+	 * price getter.
+	 * @return price
+	 */
+	public BigDecimal getPrice() {
+		return price;
+	}
+	
+	/**
+	 * price setter.
+	 * @param price
+	 */
+	public void setPrice(BigDecimal price) {
+		this.price = price;
 	}
 	
 	/**

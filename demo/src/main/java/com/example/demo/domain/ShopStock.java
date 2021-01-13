@@ -1,9 +1,14 @@
 package com.example.demo.domain;
 
+import java.math.BigDecimal;
+
 public class ShopStock {
 	
 	/** 商品ID. */
 	private Long itemId;
+	
+	/** 価格. */
+	private BigDecimal price;
 	
 	/** 店舗ID. */
 	private Long shopId;
@@ -28,6 +33,22 @@ public class ShopStock {
 	 */
 	public void setItemId(Long itemId) {
 		this.itemId = itemId;
+	}
+	
+	/**
+	 * price getter.
+	 * @return price
+	 */
+	public BigDecimal getPrice() {
+		return price;
+	}
+	
+	/**
+	 * price setter.
+	 * @param price
+	 */
+	public void setPrice(BigDecimal price) {
+		this.price = price;
 	}
 	
 	/**

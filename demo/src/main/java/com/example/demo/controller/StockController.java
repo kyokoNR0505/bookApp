@@ -29,6 +29,7 @@ public class StockController {
 		final ShopStock shopStock = stockService.findByItemIdAndShopId(itemId, shopId);
 		StockArriveForm stockArriveForm = new StockArriveForm();
 		stockArriveForm.setItemId(shopStock.getItemId());
+		stockArriveForm.setPrice(shopStock.getPrice());
 		stockArriveForm.setShopId(shopStock.getShopId());
 		stockArriveForm.setShopName(shopStock.getShopName());
 		model.addAttribute("stockArriveForm", stockArriveForm);

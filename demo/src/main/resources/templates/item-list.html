@@ -17,9 +17,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">新商品登録</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">新店舗登録</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -50,7 +47,7 @@
                     <tr th:each="item:${items}" th:object="${item}">
                         <td th:text="*{id}"></td>
                         <td th:text="*{name}"></td>
-                        <td th:text="*{price}"></td>
+                        <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')}"></td>
                         <td th:text="*{author}"></td>
                         <td class="float-right">
                             <a class="btn btn-primary" th:href="@{/items/{itemId}(itemId=*{id})}">詳細</a>

@@ -10,7 +10,7 @@
             ,sum(Stock.amount) as amount
         from Stock
             left join ShopMaster
-            on ShopMaster.id = Stock.shopId
+                on ShopMaster.id = Stock.shopId
         where itemId=#{itemId}
         group by Stock.shopId
     </select>
@@ -18,12 +18,15 @@
     <select id="findByItemIdAndShopId" resultType="com.example.demo.domain.ShopStock">
         select
              Stock.itemId
+            ,ItemMaster.price
             ,Stock.shopId
             ,ShopMaster.name as shopName
             ,sum(Stock.amount) as amount
         from Stock
             left join ShopMaster
-            on ShopMaster.id = Stock.shopId
+                on ShopMaster.id = Stock.shopId
+            left join ItemMaster
+                on ItemMaster.id = Stock.itemId
         where itemId=#{itemId}
         and shopId=#{shopId}
     </select>

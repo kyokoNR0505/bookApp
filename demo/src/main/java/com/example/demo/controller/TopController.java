@@ -13,7 +13,7 @@ import com.example.demo.form.SearchForm;
 public class TopController {
 	
 	@GetMapping
-	public String index(@ModelAttribute("searchForm")SearchForm searchForm, Model model) {
+	public String init(@ModelAttribute("searchForm")SearchForm searchForm, Model model) {
 		return "top";
 	}
 

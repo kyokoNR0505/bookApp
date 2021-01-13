@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import java.math.BigDecimal;
+
 public class Item {
 	
 	/** ID. */
@@ -9,7 +11,7 @@ public class Item {
 	private String name;
 	
 	/** 金額. */
-	private float price;
+	private BigDecimal price;
 	
 	/** 著者名. */
 	private String author;
@@ -50,7 +52,7 @@ public class Item {
 	 * price getter.
 	 * @return price
 	 */
-	public float getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
 	
@@ -58,7 +60,7 @@ public class Item {
 	 * price setter
 	 * @param price
 	 */
-	public void setPrice(float price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 	

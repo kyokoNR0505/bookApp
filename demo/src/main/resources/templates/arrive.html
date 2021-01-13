@@ -17,9 +17,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">新商品登録</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">新店舗登録</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -42,6 +39,10 @@
                     <div class="form-group row">
                         <label class="col-md-4">店舗名</label>
                         <div class="col-md-8" th:text="*{shopName}"></div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4">税抜き価格</label>
+                        <div class="col-md-8" th:text="*{price}"></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4">入荷数</label>
