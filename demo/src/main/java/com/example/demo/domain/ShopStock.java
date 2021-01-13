@@ -1,15 +1,15 @@
 package com.example.demo.domain;
 
-public class Stock {
-	
-	/** 商品ID. */
-	private Long id;
+public class ShopStock {
 	
 	/** 商品ID. */
 	private Long itemId;
 	
 	/** 店舗ID. */
 	private Long shopId;
+	
+	/** 店舗名. */
+	private String shopName;
 	
 	/** 在庫数. */
 	private int amount;
@@ -20,22 +20,6 @@ public class Stock {
 	 */
 	public Long getItemId() {
 		return itemId;
-	}
-	
-	/**
-	 * id setter.
-	 * @param itemId
-	 */
-	public void seId(Long id) {
-		this.id = id;
-	}
-	
-	/**
-	 * id getter.
-	 * @return shop id
-	 */
-	public Long getId() {
-		return id;
 	}
 	
 	/**
@@ -60,6 +44,22 @@ public class Stock {
 	 */
 	public void setShopId(Long shopId) {
 		this.shopId = shopId;
+	}
+	
+	/**
+	 * shop name getter.
+	 * @return shop name
+	 */
+	public String getShopName() {
+		return shopName;
+	}
+	
+	/**
+	 * shop name setter
+	 * @param shopName
+	 */
+	public void setShopName(String shopName) {
+		this.shopName = shopName;
 	}
 	
 	/**

@@ -2,17 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.StockMapper">
 
-    <select id="findByItemId" resultType="com.example.demo.domain.Stock">
-        select 
-             stock.id
-            ,stock.itemId
-            ,stock.shopId
+    <select id="findByItemId" resultType="com.example.demo.domain.ShopStock">
+        select
+             Stock.itemId
+            ,Stock.shopId
             ,ShopMaster.name as shopName
-            ,stock.amount
-        from stock 
+            ,sum(Stock.amount) as amount
+        from Stock
             left join ShopMaster
-            on ShopMaster.id = stock.shopId
+            on ShopMaster.id = Stock.shopId
         where itemId=#{itemId}
+        group by Stock.shopId
     </select>
+    
+    <select id="findByItemIdAndShopId" resultType="com.example.demo.domain.ShopStock">
+        select
+             Stock.itemId
+            ,Stock.shopId
+            ,ShopMaster.name as shopName
+            ,sum(Stock.amount) as amount
+        from Stock
+            left join ShopMaster
+            on ShopMaster.id = Stock.shopId
+        where itemId=#{itemId}
+        and shopId=#{shopId}
+    </select>
+    
+    <insert
+        id="insert"
+        parameterType="com.example.demo.domain.Stock"
+        flushCache="true"
+        useGeneratedKeys="true"
+        keyProperty="id, registedAt"
+        timeout="20">
+        insert into Stock(itemId, shopId, amount) values(#{itemId}, #{shopId}, #{amount})
+    </insert>
 
 </mapper>

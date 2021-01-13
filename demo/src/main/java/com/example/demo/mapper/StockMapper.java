@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.example.demo.domain.ShopStock;
 import com.example.demo.domain.Stock;
 
 /**
@@ -14,10 +15,25 @@ import com.example.demo.domain.Stock;
 public interface StockMapper {
 
 	/**
-	 * キーワード検索検索.
+	 * 商品IDで検索.
 	 * @param itemId 商品ID
 	 * @return 在庫リスト
 	 */
-	List<Stock> findByItemId(Long itemId);
+	List<ShopStock> findByItemId(Long itemId);
+	
+	/**
+	 * 商品IDと店舗IDで検索.
+	 * @param itemId 商品ID
+	 * @param shopId 店舗ID
+	 * @return 店舗在庫
+	 */
+	ShopStock findByItemIdAndShopId(Long itemId, Long shopId);
+	
+	
+	/**
+	 * 在庫を登録する.
+	 * @param stock 在庫
+	 */
+	void insert(Stock stock);
 
 }

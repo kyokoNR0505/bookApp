@@ -7,6 +7,8 @@
     <title>商品詳細</title>
 </head>
 <body>
+
+    <!-- ナビゲーションバーここから -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="/top">TOP</a>
@@ -22,8 +24,11 @@
             </div>
         </div>
     </nav>
+    <!-- ナビゲーションバーここまで -->
+
     <div class="container">
 
+        <!-- 商品詳細Cardここから -->
         <div class="card card-primary mb-3">
             <div class="card-header">
                 <h5 class="card-title">商品詳細</h5>
@@ -43,9 +48,11 @@
                         <div class="col-md-10 form-control-static" th:text="*{author}"></div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div><!-- /card-body -->
+        </div><!-- /card -->
+        <!-- 商品詳細Cardここまで -->
 
+        <!-- 在庫Cardここから -->
         <div class="card card-primary mb-3">
             <div class="card-header">
                 <h5 class="card-title">在庫</h5>
@@ -67,17 +74,19 @@
                             <td th:text="*{shopName}"></td>
                             <td th:text="*{amount}"></td>
                             <td>
-                                <button type="button" class="btn btn-primary">入荷</button>
-                                <button type="button" class="btn btn-primary">移動</button>
-                                <button type="button" class="btn btn-primary">販売</button>
+                                <a type="button" class="btn btn-primary"
+                                    th:href="@{/stock/arrive/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">入荷</a>
+                                <a type="button" class="btn btn-primary" >販売</a>
                             </td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-        </div>
+            </div><!-- /card-body -->
+        </div><!-- /card -->
+        <!-- 在庫Cardここまで -->
 
-    </div>
+    </div><!-- /container -->
+
     <script src="/js/jquery-3.5.1.slim.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </body>
