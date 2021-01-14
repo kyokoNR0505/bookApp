@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2 control-label">価格</label>
-                        <div class="col-md-10 form-control-static" th:text="*{price}"></div>
+                        <div class="col-md-10 form-control-static" th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')}"></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2 control-label">著者名</label>
