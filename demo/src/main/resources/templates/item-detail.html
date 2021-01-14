@@ -71,10 +71,10 @@
                             <td th:text="*{shopName}"></td>
                             <td th:text="*{amount}"></td>
                             <td>
-                                <a type="button" class="btn btn-primary"
-                                    th:href="@{/stock/arrive/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">入荷</a>
-                                <a type="button" class="btn btn-primary"
-                                    th:href="@{/stock/sell/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">販売</a>
+                                <a type="button" class="btn btn-success"
+                                    th:href="@{/stock/arrive/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">入荷登録</a>
+                                <a type="button" class="btn btn-danger"
+                                    th:href="@{/stock/sell/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">販売登録</a>
                             </td>
                         </tr>
                     </tbody>
