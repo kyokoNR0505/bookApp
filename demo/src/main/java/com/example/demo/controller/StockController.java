@@ -50,15 +50,14 @@ public class StockController {
 		return "redirect:/items/"+ stock.getItemId();
 	}
 	
-	@GetMapping("move/{itemId}/{shopId}")
-	public String move(@PathVariable Long itemId, @PathVariable Long shopId, Model model) {
-		return "item-detail";
-	}
 	
 	@GetMapping("sell/{itemId}/{shopId}")
 	public String sell(@PathVariable Long itemId, @PathVariable Long shopId, Model model) {
-		return "item-detail";
+		return null;
 	}
 	
-	
+	@PostMapping("sell/submit")
+	public String sellSubmit(@ModelAttribute @Validated StockArriveForm stockArriveForm, BindingResult result, Model model) {
+		return null;
+	}
 }

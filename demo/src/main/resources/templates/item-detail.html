@@ -73,7 +73,8 @@
                             <td>
                                 <a type="button" class="btn btn-primary"
                                     th:href="@{/stock/arrive/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">入荷</a>
-                                <a type="button" class="btn btn-primary" >販売</a>
+                                <a type="button" class="btn btn-primary"
+                                    th:href="@{/stock/sell/{itemId}/{shopId}(itemId=*{itemId}, shopId=*{shopId})}">販売</a>
                             </td>
                         </tr>
                     </tbody>
