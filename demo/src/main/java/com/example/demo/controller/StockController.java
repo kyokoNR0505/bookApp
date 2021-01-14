@@ -32,6 +32,7 @@ public class StockController {
 		stockArriveForm.setPrice(shopStock.getPrice());
 		stockArriveForm.setShopId(shopStock.getShopId());
 		stockArriveForm.setShopName(shopStock.getShopName());
+		stockArriveForm.setCurrentAmount(shopStock.getAmount());
 		model.addAttribute("stockArriveForm", stockArriveForm);
 		return "arrive";
 	}

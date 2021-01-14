@@ -45,6 +45,10 @@
                         <div class="col-md-8" th:text="${#numbers.formatDecimal(stockArriveForm.price, 0, 'COMMA', 0, 'POINT')}"></div>
                     </div>
                     <div class="form-group row">
+                        <label class="col-md-4">現在の在庫数</label>
+                        <div class="col-md-8" th:text="*{currentAmount}"></div>
+                    </div>
+                    <div class="form-group row">
                         <label class="col-md-4">入荷数</label>
                         <input class="col-md-8 form-control" type="text" th:field="*{inputAmount}"/>
                         <div class="col-md-4"></div>
