@@ -19,6 +19,7 @@ public class ShopStock {
 	/** 在庫数. */
 	private int amount;
 	
+	
 	/**
 	 * item id getter.
 	 * @return itemId

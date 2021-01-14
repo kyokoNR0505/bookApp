@@ -14,9 +14,9 @@ public class TaxCalculator {
 	 * @param price 税抜き金額
 	 * @return 税込金額
 	 */
-	public BigDecimal calcTaxIncluded(BigDecimal price) {
-		BigDecimal result = TAX.multiply(price).setScale(0, RoundingMode.DOWN);
-		return result;
+	public static BigDecimal calcTaxIncluded(BigDecimal price) {
+		BigDecimal taxIncluded = price.add(TAX.multiply(price));
+		return taxIncluded.setScale(0, RoundingMode.DOWN);
 	}
 	
 	/** インスタンス化禁止. */

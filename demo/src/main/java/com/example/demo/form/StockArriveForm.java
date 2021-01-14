@@ -25,6 +25,9 @@ public class StockArriveForm {
 	@Positive(message="入荷数は0以上を入力してください。")
 	private int inputAmount;
 	
+	/** 税込み価格. */
+	private BigDecimal taxPrice;
+	
 	/**
 	 * itemId getter.
 	 * @return 商品ID
@@ -120,4 +123,23 @@ public class StockArriveForm {
 	public void setInputAmount(int inputAmount) {
 		this.inputAmount = inputAmount;
 	}
+	
+	/**
+	 * taxPrice setter.
+	 * @param taxPrice 税込み価格
+	 */
+	public void setTaxPrice(BigDecimal taxPrice) {
+		this.taxPrice = taxPrice;
+	}
+	
+	/**
+	 * taxPrice getter.
+	 * @return 税込み価格
+	 */
+	public BigDecimal getTaxPrice() {
+		return this.taxPrice;
+	}
+	
+
 }
+

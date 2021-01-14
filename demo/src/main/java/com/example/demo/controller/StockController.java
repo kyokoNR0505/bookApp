@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +15,7 @@ import com.example.demo.domain.ShopStock;
 import com.example.demo.domain.Stock;
 import com.example.demo.form.StockArriveForm;
 import com.example.demo.service.StockService;
+import com.example.demo.utils.TaxCalculator;
 
 @Controller
 @RequestMapping("/stock")
@@ -33,6 +33,7 @@ public class StockController {
 		stockArriveForm.setShopId(shopStock.getShopId());
 		stockArriveForm.setShopName(shopStock.getShopName());
 		stockArriveForm.setCurrentAmount(shopStock.getAmount());
+		stockArriveForm.setTaxPrice(TaxCalculator.calcTaxIncluded(shopStock.getPrice()));
 		model.addAttribute("stockArriveForm", stockArriveForm);
 		return "arrive";
 	}
