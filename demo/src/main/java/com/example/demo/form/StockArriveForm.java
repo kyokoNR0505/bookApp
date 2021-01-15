@@ -28,6 +28,9 @@ public class StockArriveForm {
 	/** 税込み価格. */
 	private BigDecimal taxPrice;
 	
+	/** 商品名. */
+	private String bookName;
+	
 	/**
 	 * itemId getter.
 	 * @return 商品ID
@@ -125,6 +128,13 @@ public class StockArriveForm {
 	}
 	
 	/**
+	 * taxPrice getter.
+	 * @return 税込み価格
+	 */
+	public BigDecimal getTaxPrice() {
+		return this.taxPrice;
+	}
+	/**
 	 * taxPrice setter.
 	 * @param taxPrice 税込み価格
 	 */
@@ -133,11 +143,19 @@ public class StockArriveForm {
 	}
 	
 	/**
-	 * taxPrice getter.
-	 * @return 税込み価格
+	 * bookName getter.
+	 * @return 商品名
 	 */
-	public BigDecimal getTaxPrice() {
-		return this.taxPrice;
+	public String getBookName() {
+		return this.bookName;
+	}
+	
+	/**
+	 * bookName setter.
+	 * @param bookName 商品名
+	 */
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
 	
 

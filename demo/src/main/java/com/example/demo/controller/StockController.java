@@ -34,6 +34,7 @@ public class StockController {
 		stockArriveForm.setShopName(shopStock.getShopName());
 		stockArriveForm.setCurrentAmount(shopStock.getAmount());
 		stockArriveForm.setTaxPrice(TaxCalculator.calcTaxIncluded(shopStock.getPrice()));
+		stockArriveForm.setBookName(shopStock.getBookName());
 		model.addAttribute("stockArriveForm", stockArriveForm);
 		return "arrive";
 	}

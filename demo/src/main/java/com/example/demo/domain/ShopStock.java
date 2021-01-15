@@ -19,6 +19,9 @@ public class ShopStock {
 	/** 在庫数. */
 	private int amount;
 	
+	/** 商品名. */
+	private String bookName;
+	
 	
 	/**
 	 * item id getter.
@@ -98,6 +101,22 @@ public class ShopStock {
 	 */
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+	
+	/**
+	 * book name getter.
+	 * @return book name
+	 */
+	public String getBookName() {
+		return this.bookName;
+	}
+	
+	/**
+	 * book name setter
+	 * @param bookName
+	 */
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
 	}
 
 }
