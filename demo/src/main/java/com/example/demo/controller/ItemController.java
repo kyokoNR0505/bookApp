@@ -16,16 +16,30 @@ import com.example.demo.form.SearchForm;
 import com.example.demo.service.ItemService;
 import com.example.demo.service.StockService;
 
+/**
+ * アイテムコントローラー.
+ * @author kyokokitagawa
+ *
+ */
 @Controller
 @RequestMapping("/items")
 public class ItemController {
 	
+	/** アイテムサービス. */
 	@Autowired
 	private ItemService itemService;
 	
+	/** 在庫サービス. */
 	@Autowired
 	private StockService stockService;
 	
+	/**
+	 * アイテム検索.
+	 * @param searchForm 検索フォーム
+	 * @param result BindingResult
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
 	@PostMapping("/search")
 	public String itemSearch(@ModelAttribute("searchForm") @Validated SearchForm searchForm, BindingResult result, Model model) {
 		if (result.hasErrors()) {
@@ -37,6 +51,12 @@ public class ItemController {
 		}
 	}
 	
+	/**
+	 * 商品詳細表示.
+	 * @param itemId 商品ID
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
 	@GetMapping("{itemId}")
 	public String show(@PathVariable Long itemId, Model model) {
 		model.addAttribute("item", itemService.findOne(itemId));

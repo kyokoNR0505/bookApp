@@ -2,6 +2,11 @@ package com.example.demo.form;
 
 import javax.validation.constraints.NotBlank;
 
+/**
+ * 検索フォーム.
+ * @author kyokokitagawa
+ *
+ */
 public class SearchForm {
 	
 	/** 商品名. */

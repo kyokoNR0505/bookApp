@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.Positive;
 
+/**
+ * 在庫入荷フォーム.
+ * @author kyokokitagawa
+ *
+ */
 public class StockArriveForm {
 	
 	/** 商品ID. */

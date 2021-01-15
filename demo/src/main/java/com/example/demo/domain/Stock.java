@@ -1,5 +1,10 @@
 package com.example.demo.domain;
 
+/**
+ * 在庫.
+ * @author kyokokitagawa
+ *
+ */
 public class Stock {
 	
 	/** 商品ID. */

@@ -17,13 +17,26 @@ import com.example.demo.form.StockArriveForm;
 import com.example.demo.service.StockService;
 import com.example.demo.utils.TaxCalculator;
 
+/**
+ * 在庫コントローラー.
+ * @author kyokokitagawa
+ *
+ */
 @Controller
 @RequestMapping("/stock")
 public class StockController {
 	
+	/** 在庫サービス. */
 	@Autowired
 	private StockService stockService;
 
+	/**
+	 * 商品入荷ページ表示.
+	 * @param itemId 商品ID
+	 * @param shopId 店舗ID
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
 	@GetMapping("arrive/{itemId}/{shopId}")
 	public String arrive(@PathVariable Long itemId, @PathVariable Long shopId, Model model) {
 		final ShopStock shopStock = stockService.findByItemIdAndShopId(itemId, shopId);
@@ -39,6 +52,13 @@ public class StockController {
 		return "arrive";
 	}
 	
+	/**
+	 * 入荷情報登録.
+	 * @param stockArriveForm 在庫入荷フォーム
+	 * @param result BindingResult
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
 	@PostMapping("arrive/submit")
 	public String arrivalSubmit(@ModelAttribute @Validated StockArriveForm stockArriveForm, BindingResult result, Model model) {
 		if(result.hasErrors()) {
@@ -52,7 +72,6 @@ public class StockController {
 		
 		return "redirect:/items/"+ stock.getItemId();
 	}
-	
 	
 	@GetMapping("sell/{itemId}/{shopId}")
 	public String sell(@PathVariable Long itemId, @PathVariable Long shopId, Model model) {
