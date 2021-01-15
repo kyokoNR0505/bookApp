@@ -29,7 +29,7 @@ public class StockArriveForm {
 	private BigDecimal taxPrice;
 	
 	/** 商品名. */
-	private String bookName;
+	private String itemName;
 	
 	/**
 	 * itemId getter.
@@ -143,19 +143,19 @@ public class StockArriveForm {
 	}
 	
 	/**
-	 * bookName getter.
+	 * itemName getter.
 	 * @return 商品名
 	 */
-	public String getBookName() {
-		return this.bookName;
+	public String getItemName() {
+		return this.itemName;
 	}
 	
 	/**
-	 * bookName setter.
-	 * @param bookName 商品名
+	 * itemName setter.
+	 * @param itemName 商品名
 	 */
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 	
 

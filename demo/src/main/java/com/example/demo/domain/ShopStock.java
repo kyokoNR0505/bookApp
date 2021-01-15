@@ -20,7 +20,7 @@ public class ShopStock {
 	private int amount;
 	
 	/** 商品名. */
-	private String bookName;
+	private String itemName;
 	
 	
 	/**
@@ -104,19 +104,19 @@ public class ShopStock {
 	}
 	
 	/**
-	 * book name getter.
-	 * @return book name
+	 * item name getter.
+	 * @return item name
 	 */
-	public String getBookName() {
-		return this.bookName;
+	public String getItemName() {
+		return this.itemName;
 	}
 	
 	/**
-	 * book name setter
-	 * @param bookName
+	 * item name setter
+	 * @param itemName
 	 */
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
 	}
 
 }

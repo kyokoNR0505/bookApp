@@ -22,7 +22,7 @@
             ,Stock.shopId
             ,ShopMaster.name as shopName
             ,sum(Stock.amount) as amount
-            ,ItemMaster.name as bookName
+            ,ItemMaster.name as itemName
         from Stock
             left join ShopMaster
                 on ShopMaster.id = Stock.shopId
