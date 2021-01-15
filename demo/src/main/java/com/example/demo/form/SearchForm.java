@@ -1,12 +1,12 @@
 package com.example.demo.form;
 
-import javax.validation.constraints.NotBlank;
-
 public class SearchForm {
 	
 	/** 商品名. */
-	@NotBlank(message="商品名を入力してください。")
 	private String itemName;
+	
+	/** 著者名. */
+	private String author;
 	
 	/**
 	 * itemName getter.
@@ -22,5 +22,21 @@ public class SearchForm {
 	 */
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+	
+	/**
+	 * author getter.
+	 * @return 著者名
+	 */
+	public String getAuthor() {
+		return this.author;
+	}
+	
+	/**
+	 * author setter.
+	 * @param author 著者名
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 }

@@ -25,12 +25,14 @@ public class ItemService {
 	/**
 	 * キーワード検索.
 	 * @param str キーワード
+	 * @param str2 キーワード
 	 * @return アイテム
 	 */
 	@Transactional
-	public List<Item> findByKeyword(String str) {
-		return itemMapper.findByKeyword(str);
+	public List<Item> findByKeyword(String str, String str2) {
+		return itemMapper.findByKeyword(str, str2);
 	}
+
 	
 	/**
 	 * 一件検索.

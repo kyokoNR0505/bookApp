@@ -29,7 +29,7 @@
             <form th:action="@{/items/search}" th:method="post" th:object="${searchForm}">
                 <div class="form-group">
                     <input th:field="*{itemName}" type="text" class="form-control" placeholder="商品名を入力してください">
-                    <div class="text-danger" th:if="${#fields.hasErrors('itemName')}" th:errors="*{itemName}"></div>
+                    <input th:field="*{author}" type="text" class="form-control" placeholder="著者名を入力してください">
                 </div>
                 <input type="submit" value="検索" class="btn btn-primary"></input>
             </form>

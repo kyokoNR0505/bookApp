@@ -14,11 +14,11 @@ import com.example.demo.domain.Item;
 public interface ItemMapper {
 
 	/**
-	 * キーワード検索検索.
+	 * キーワード検索.
 	 * @param str キーワード
 	 * @return アイテムリスト
 	 */
-	List<Item> findByKeyword(String str);
+	List<Item> findByKeyword(String str, String str2);
 	
 	/**
 	 * 一件検索.

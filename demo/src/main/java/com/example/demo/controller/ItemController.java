@@ -32,7 +32,7 @@ public class ItemController {
 			model.addAttribute("searchForm", searchForm);
 			return "top";
 		} else {
-			model.addAttribute("items", itemService.findByKeyword(searchForm.getItemName()));
+			model.addAttribute("items", itemService.findByKeyword(searchForm.getItemName(), searchForm.getAuthor()));
 			return "item-list";
 		}
 	}
