@@ -3,7 +3,7 @@
 <mapper namespace="com.example.demo.mapper.ItemMapper">
 
     <select id="findByKeyword" resultType="com.example.demo.domain.Item">
-        select * from ItemMaster where name like '%${str}%' and author like '%${str2}%'
+        select * from ItemMaster where name like '%${itemName}%' and author like '%${author}%'
     </select>
 
     <select id="findOne" resultType="com.example.demo.domain.Item">
