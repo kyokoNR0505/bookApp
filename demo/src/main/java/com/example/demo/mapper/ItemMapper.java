@@ -15,7 +15,8 @@ public interface ItemMapper {
 
 	/**
 	 * キーワード検索.
-	 * @param str キーワード
+	 * @param itemName キーワード
+	 * @param author キーワード
 	 * @return アイテムリスト
 	 */
 	List<Item> findByKeyword(String itemName, String author);
