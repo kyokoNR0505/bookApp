@@ -3,11 +3,15 @@ package com.example.demo.utils;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * 税金計算ユーティリティ.
+ * @author kyokokitagawa
+ *
+ */
 public class TaxCalculator {
 	
 	/** 税率. */
 	private static final BigDecimal TAX = BigDecimal.valueOf(0.1);
-	
 	
 	/**
 	 * 税込金額を返す（小数点以下切り捨て）.

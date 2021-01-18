@@ -1,5 +1,11 @@
 package com.example.demo.form;
 
+
+/**
+ * 検索フォーム.
+ * @author kyokokitagawa
+ *
+ */
 public class SearchForm {
 	
 	/** 商品名. */

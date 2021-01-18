@@ -2,6 +2,11 @@ package com.example.demo.domain;
 
 import java.math.BigDecimal;
 
+/**
+ * 店舗在庫.
+ * @author kyokokitagawa
+ *
+ */
 public class ShopStock {
 	
 	/** 商品ID. */

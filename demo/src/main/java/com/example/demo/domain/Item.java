@@ -2,6 +2,11 @@ package com.example.demo.domain;
 
 import java.math.BigDecimal;
 
+/**
+ * 商品.
+ * @author kyokokitagawa
+ *
+ */
 public class Item {
 	
 	/** ID. */
