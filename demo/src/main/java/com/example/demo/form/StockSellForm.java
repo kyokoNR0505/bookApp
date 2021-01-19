@@ -2,6 +2,7 @@ package com.example.demo.form;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 /**
@@ -26,8 +27,9 @@ public class StockSellForm {
 	private int currentAmount;
 
 	/** 販売数（画面入力値）. */
+	@NotNull(message="販売数を入力してください。")
 	@Positive(message="販売数は0以上を入力してください。")
-	private int inputAmount;
+	private Integer inputAmount;
 	
 	/** 税込み価格. */
 	private BigDecimal taxPrice;
@@ -119,7 +121,7 @@ public class StockSellForm {
 	 * inputAmount getter.
 	 * @return 販売数
 	 */
-	public int getInputAmount() {
+	public Integer getInputAmount() {
 		return this.inputAmount;
 	}
 
@@ -127,7 +129,7 @@ public class StockSellForm {
 	 * inputAmount setter.
 	 * @param inputAmount 販売数
 	 */
-	public void setInputAmount(int inputAmount) {
+	public void setInputAmount(Integer inputAmount) {
 		this.inputAmount = inputAmount;
 	}
 	
