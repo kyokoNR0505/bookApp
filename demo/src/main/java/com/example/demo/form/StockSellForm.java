@@ -2,15 +2,14 @@ package com.example.demo.form;
 
 import java.math.BigDecimal;
 
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 /**
- * 在庫入荷フォーム.
+ * 在庫販売フォーム.
  * @author kyokokitagawa
  *
  */
-public class StockArriveForm {
+public class StockSellForm {
 	
 	/** 商品ID. */
 	private Long itemId;
@@ -27,10 +26,9 @@ public class StockArriveForm {
 	/** 現在の在庫数. */
 	private int currentAmount;
 
-	/** 入荷数（画面入力値）. */
-	@NotNull(message="入荷数を入力してください。")
-	@Positive(message="入荷数は0以上を入力してください。")
-	private Integer inputAmount;
+	/** 販売数（画面入力値）. */
+	@Positive(message="販売数は0以上を入力してください。")
+	private int inputAmount;
 	
 	/** 税込み価格. */
 	private BigDecimal taxPrice;
@@ -120,17 +118,17 @@ public class StockArriveForm {
 
 	/**
 	 * inputAmount getter.
-	 * @return 入荷数
+	 * @return 販売数
 	 */
-	public Integer getInputAmount() {
+	public int getInputAmount() {
 		return this.inputAmount;
 	}
 
 	/**
 	 * inputAmount setter.
-	 * @param inputAmount 入荷数
+	 * @param inputAmount 販売数
 	 */
-	public void setInputAmount(Integer inputAmount) {
+	public void setInputAmount(int inputAmount) {
 		this.inputAmount = inputAmount;
 	}
 	
@@ -164,6 +162,7 @@ public class StockArriveForm {
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
+	
 
 }
 

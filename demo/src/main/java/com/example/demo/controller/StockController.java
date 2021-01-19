@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.example.demo.domain.ShopStock;
 import com.example.demo.domain.Stock;
 import com.example.demo.form.StockArriveForm;
+import com.example.demo.form.StockSellForm;
 import com.example.demo.service.StockService;
 import com.example.demo.utils.TaxCalculator;
 
@@ -73,13 +74,46 @@ public class StockController {
 		return "redirect:/items/"+ stock.getItemId();
 	}
 	
+	/**
+	 * 商品販売ページ表示.
+	 * @param itemId 商品ID
+	 * @param shopId 店舗ID
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
 	@GetMapping("sell/{itemId}/{shopId}")
 	public String sell(@PathVariable Long itemId, @PathVariable Long shopId, Model model) {
-		return null;
+		final ShopStock shopStock = stockService.findByItemIdAndShopId(itemId, shopId);
+		StockSellForm stockSellForm = new StockSellForm();
+		stockSellForm.setItemId(shopStock.getItemId());
+		stockSellForm.setPrice(shopStock.getPrice());
+		stockSellForm.setShopId(shopStock.getShopId());
+		stockSellForm.setShopName(shopStock.getShopName());
+		stockSellForm.setCurrentAmount(shopStock.getAmount());
+		stockSellForm.setTaxPrice(TaxCalculator.calcTaxIncluded(shopStock.getPrice()));
+		stockSellForm.setItemName(shopStock.getItemName());
+		model.addAttribute("stockSellForm", stockSellForm);
+		return "sell";
 	}
 	
+	/**
+	 * 販売情報登録.
+	 * @param stockSellForm 在庫販売フォーム
+	 * @param result BindingResult
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
 	@PostMapping("sell/submit")
-	public String sellSubmit(@ModelAttribute @Validated StockArriveForm stockArriveForm, BindingResult result, Model model) {
-		return null;
+	public String sellSubmit(@ModelAttribute @Validated StockSellForm stockSellForm, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "sell";
+		}
+		Stock stock = new Stock();
+		stock.setItemId(stockSellForm.getItemId());
+		stock.setShopId(stockSellForm.getShopId());
+		stock.setAmount(-stockSellForm.getInputAmount());
+		stockService.saveStock(stock);
+		
+		return "redirect:/items/"+ stock.getItemId();
 	}
 }
