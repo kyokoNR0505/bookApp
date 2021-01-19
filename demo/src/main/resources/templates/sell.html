@@ -31,7 +31,6 @@
                 <h5 class="card-title">商品販売</h5>
             </div>
             <div class="card-body">
-                <!-- <div th:object="${stock}"> -->
                 <form th:method="post" th:action="@{/stock/sell/submit}" th:object="${stockSellForm}">
                     <input type="hidden" th:field="*{itemId}"/>
                     <input type="hidden" th:field="*{shopId}"/>
@@ -66,7 +65,6 @@
                         <input type="submit" value="登録" class="btn btn-primary"></input>
                     </div>
                 </form>
-                <!-- </div> -->
             </div><!-- /card-body -->
         </div><!-- /card -->
         <!-- 商品販売Cardここまで -->

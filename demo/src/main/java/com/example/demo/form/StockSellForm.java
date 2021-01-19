@@ -6,7 +6,6 @@ import javax.validation.constraints.Positive;
 
 /**
  * 在庫販売フォーム.
- * @author kyokokitagawa
  *
  */
 public class StockSellForm {
