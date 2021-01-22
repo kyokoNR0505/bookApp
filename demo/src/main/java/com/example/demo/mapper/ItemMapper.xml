@@ -10,4 +10,14 @@
         select * from ItemMaster where id=#{id}
     </select>
 
+    <insert
+        id="insert"
+        parameterType="com.example.demo.domain.Item"
+        flushCache="true"
+        useGeneratedKeys="true"
+        keyProperty="id"
+        timeout="20">
+        insert into ItemMaster(name, price, author) values(#{name}, #{price}, #{author})
+    </insert>
+
 </mapper>

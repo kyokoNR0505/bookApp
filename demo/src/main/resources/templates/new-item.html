@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+<title>新商品登録</title>
+</head>
+<body>
+
+    <!-- ナビゲーションバーここから -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" th:href="@{/top}">商品検索TOP</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/items/new}">新商品登録</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ナビゲーションバーここまで -->
+
+    <div class="container">
+ 
+        <!-- 商品入荷Cardここから -->
+        <div class="card card-primary mb-3">
+            <div class="card-header">
+                <h5 class="card-title">新商品登録</h5>
+            </div>
+            <div class="card-body">
+                <form th:method="post" th:action="@{/items/new}" th:object="${newItemForm}">
+                    <div class="form-group row">
+                        <label class="col-md-4">商品名</label>
+                        <input class="col-md-8 form-control" type="text" th:field="*{inputItemName}"/>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4">税抜き価格</label>
+                        <input class="col-md-8 form-control" type="text" th:field="*{inputPrice}"/>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-4">著者名</label>
+                        <input class="col-md-8 form-control" type="text" th:field="*{inputAuthor}"/>
+                    </div>
+                    <div class="form-group row">
+                        <input type="submit" value="登録" class="btn btn-primary"></input>
+                    </div>
+                 </form>
+            </div><!-- /card-body -->
+        </div><!-- /card -->
+        <!-- 商品入荷Cardここまで -->
+
+    </div><!-- /container -->
+
+    <script src="/js/jquery-3.5.1.slim.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

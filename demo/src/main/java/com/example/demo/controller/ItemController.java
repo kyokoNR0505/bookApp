@@ -12,13 +12,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.demo.domain.Item;
+import com.example.demo.form.NewItemForm;
 import com.example.demo.form.SearchForm;
 import com.example.demo.service.ItemService;
 import com.example.demo.service.StockService;
 
 /**
  * アイテムコントローラー.
- * @author kyokokitagawa
+ * @author kyokokitagawa/yumikoirisawa
  *
  */
 @Controller
@@ -63,5 +65,37 @@ public class ItemController {
 		model.addAttribute("stocks", stockService.findByItemId(itemId));
 		return "item-detail";
 	}
-
+	
+	/**
+	 * 新商品登録画面の表示.
+	 * @param newItemForm 新商品登録フォーム
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
+	@GetMapping("/new")
+	public String newItem(@ModelAttribute("newItemForm")NewItemForm newItemForm, Model model) {
+		return "new-item";
+	}
+	
+	/**
+	 * 新商品情報登録.
+	 * @param newItemForm 新商品登録フォーム
+	 * @param result BindingResult
+	 * @param model モデル
+	 * @return テンプレート名
+	 */
+	@PostMapping("/new")
+	public String itemAdd(@ModelAttribute @Validated NewItemForm newItemForm, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "new-item";
+		}
+		Item item = new Item();
+		item.setName(newItemForm.getInputItemName());
+		item.setPrice(newItemForm.getInputPrice());
+		item.setAuthor(newItemForm.getInputAuthor());
+		itemService.insert(item);
+			
+		return "new-item";
+	}
+	
 }

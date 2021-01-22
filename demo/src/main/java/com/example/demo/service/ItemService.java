@@ -11,7 +11,8 @@ import com.example.demo.mapper.ItemMapper;
 
 /**
  * アイテムサービス.
- * @author kyokokitagawa
+ * @author kyokokitagawa/yumikoirisawa
+ * 
  */
 @Service
 public class ItemService {
@@ -32,7 +33,6 @@ public class ItemService {
 	public List<Item> findByKeyword(String itemName, String author) {
 		return itemMapper.findByKeyword(itemName, author);
 	}
-
 	
 	/**
 	 * 一件検索.
@@ -42,6 +42,15 @@ public class ItemService {
 	@Transactional
 	public Item findOne(Long id) {
 		return itemMapper.findOne(id);
+	}
+	
+	/**
+	 * 新商品を登録する.
+	 * @param item アイテム
+	 */
+	@Transactional
+	public void insert(Item item) {
+		itemMapper.insert(item);
 	}
 
 }
