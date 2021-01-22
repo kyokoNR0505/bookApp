@@ -24,7 +24,7 @@ public class SearchForm {
 	
 	/**
 	 * itemName setter.
-	 * @param itemName 商品名r
+	 * @param itemName 商品名
 	 */
 	public void setItemName(String itemName) {
 		this.itemName = itemName;

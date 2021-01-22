@@ -8,7 +8,7 @@ import com.example.demo.domain.Item;
 
 /**
  * アイテムマッパーインターフェース.
- * @author kyokokitagawa
+ * @author kyokokitagawa/yumikoirisawa
  */
 @Mapper
 public interface ItemMapper {
@@ -28,4 +28,10 @@ public interface ItemMapper {
 	 */
 	Item findOne(Long id);
 
+	/**
+	 * 新商品を登録する.
+	 * @param item　アイテム
+	 */
+	void insert(Item item);
+	
 }

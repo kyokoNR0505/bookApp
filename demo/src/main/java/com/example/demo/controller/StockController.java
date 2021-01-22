@@ -116,4 +116,5 @@ public class StockController {
 		
 		return "redirect:/items/"+ stock.getItemId();
 	}
+	
 }

@@ -24,16 +24,26 @@
     <!-- ナビゲーションバーここまで -->
 
     <div class="container">
-        <div class="jumbotron">
-            <h4>商品検索</h4>
-            <form th:action="@{/items/search}" th:method="post" th:object="${searchForm}">
-                <div class="form-group">
-                    <input th:field="*{itemName}" type="text" class="form-control" placeholder="商品名を入力してください">
-                    <input th:field="*{author}" type="text" class="form-control" placeholder="著者名を入力してください">
-                </div>
-                <input type="submit" value="検索" class="btn btn-primary"></input>
-            </form>
-        </div>
+ 
+        <!-- 商品入荷Cardここから -->
+        <div class="card card-primary mb-3">
+            <div class="card-header">
+                <h5 class="card-title">新商品登録</h5>
+            </div>
+            <div class="card-body">
+                <form th:method="post" action="/items/new" th:object="${NewItemForm}">
+                    <div class="form-group row">
+                        <td><label>商品名：<input type="text" name="inputItemName"/></label></td>
+                        <td><label>金額：<input type="text" name="inputPrice"/></label></td>
+                        <td><label>著者名：<input type="text" name="inputAuthor"/></label></td>
+                    </div>
+                        <input type="submit" value="登録" class="btn btn-primary"></input>
+                     </form>
+                    </div>
+            </div><!-- /card-body -->
+        </div><!-- /card -->
+        <!-- 商品入荷Cardここまで -->
+
     </div><!-- /container -->
 
     <script src="/js/jquery-3.5.1.slim.js"></script>
