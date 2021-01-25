@@ -49,8 +49,8 @@ public class ItemService {
 	 * @param item アイテム
 	 */
 	@Transactional
-	public void insert(Item item) {
-		itemMapper.insert(item);
+	public void addNewItem(Item item) {
+		itemMapper.addNewItem(item);
 	}
 
 }

@@ -11,7 +11,7 @@
     </select>
 
     <insert
-        id="insert"
+        id="addNewItem"
         parameterType="com.example.demo.domain.Item"
         flushCache="true"
         useGeneratedKeys="true"

@@ -93,7 +93,7 @@ public class ItemController {
 		item.setName(newItemForm.getInputItemName());
 		item.setPrice(newItemForm.getInputPrice());
 		item.setAuthor(newItemForm.getInputAuthor());
-		itemService.insert(item);
+		itemService.addNewItem(item);
 			
 		return "new-item";
 	}

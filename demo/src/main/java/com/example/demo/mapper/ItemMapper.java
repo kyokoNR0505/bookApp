@@ -32,6 +32,6 @@ public interface ItemMapper {
 	 * 新商品を登録する.
 	 * @param item　アイテム
 	 */
-	void insert(Item item);
+	void addNewItem(Item item);
 	
 }
