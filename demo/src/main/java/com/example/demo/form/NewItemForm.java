@@ -2,6 +2,7 @@ package com.example.demo.form;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
@@ -16,7 +17,7 @@ public class NewItemForm {
 	private Long itemId;
 
 	/** 商品名（画面入力値）. */
-	@NotNull(message="商品名を入力してください。")
+	@NotBlank(message="商品名を入力してください。")
 	private String inputItemName;
 		
 	/** 金額（画面入力値）. */
@@ -25,7 +26,7 @@ public class NewItemForm {
 	private BigDecimal inputPrice;
 	
 	/** 著者名（画面入力値）. */
-	@NotNull(message="著者名を入力してください。")
+	@NotBlank(message="著者名を入力してください。")
 	private String inputAuthor;
 	
 	/**

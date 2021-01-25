@@ -25,7 +25,7 @@
 
     <div class="container">
  
-        <!-- 商品入荷Cardここから -->
+        <!-- 新商品登録Cardここから -->
         <div class="card card-primary mb-3">
             <div class="card-header">
                 <h5 class="card-title">新商品登録</h5>
@@ -35,14 +35,17 @@
                     <div class="form-group row">
                         <label class="col-md-4">商品名</label>
                         <input class="col-md-8 form-control" type="text" th:field="*{inputItemName}"/>
+                        <div class="text-danger col-md-8" th:if="${#fields.hasErrors('inputItemName')}" th:errors="*{inputItemName}"></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4">税抜き価格</label>
                         <input class="col-md-8 form-control" type="text" th:field="*{inputPrice}"/>
+                        <div class="text-danger col-md-8" th:if="${#fields.hasErrors('inputPrice')}" th:errors="*{inputPrice}"></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-4">著者名</label>
                         <input class="col-md-8 form-control" type="text" th:field="*{inputAuthor}"/>
+                        <div class="text-danger col-md-8" th:if="${#fields.hasErrors('inputAuthor')}" th:errors="*{inputAuthor}"></div>
                     </div>
                     <div class="form-group row">
                         <input type="submit" value="登録" class="btn btn-primary"></input>
@@ -50,7 +53,7 @@
                  </form>
             </div><!-- /card-body -->
         </div><!-- /card -->
-        <!-- 商品入荷Cardここまで -->
+        <!-- 新商品登録Cardここまで -->
 
     </div><!-- /container -->
 
