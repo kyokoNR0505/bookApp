@@ -67,7 +67,7 @@ public class ItemController {
 	}
 	
 	/**
-	 * 新商品登録画面の表示.
+	 * 新商品登録ページ表示.
 	 * @param newItemForm 新商品登録フォーム
 	 * @param model モデル
 	 * @return テンプレート名
@@ -84,7 +84,7 @@ public class ItemController {
 	 * @param model モデル
 	 * @return テンプレート名
 	 */
-	@PostMapping("/new")
+	@PostMapping("/new/add")
 	public String itemAdd(@ModelAttribute @Validated NewItemForm newItemForm, BindingResult result, Model model) {
 		if(result.hasErrors()) {
 			return "new-item";
@@ -94,8 +94,9 @@ public class ItemController {
 		item.setPrice(newItemForm.getInputPrice());
 		item.setAuthor(newItemForm.getInputAuthor());
 		itemService.addNewItem(item);
-			
-		return "new-item";
+
+		return "redirect:/items/"+ item.getId();
 	}
-	
+
+
 }

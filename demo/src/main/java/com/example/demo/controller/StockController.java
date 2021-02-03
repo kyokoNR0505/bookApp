@@ -13,14 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.demo.domain.ShopStock;
 import com.example.demo.domain.Stock;
+import com.example.demo.form.NewStockForm;
 import com.example.demo.form.StockArriveForm;
 import com.example.demo.form.StockSellForm;
+import com.example.demo.service.ItemService;
+import com.example.demo.service.ShopService;
 import com.example.demo.service.StockService;
 import com.example.demo.utils.TaxCalculator;
 
 /**
  * 在庫コントローラー.
- * @author kyokokitagawa
+ * @author kyokokitagawa/yumikoirisawa
  *
  */
 @Controller
@@ -30,6 +33,14 @@ public class StockController {
 	/** 在庫サービス. */
 	@Autowired
 	private StockService stockService;
+	
+	/** アイテムサービス. */
+	@Autowired
+	private ItemService itemService;
+	
+	/** 店舗サービス. */
+	@Autowired
+	private ShopService shopService;
 
 	/**
 	 * 商品入荷ページ表示.
@@ -117,4 +128,39 @@ public class StockController {
 		return "redirect:/items/"+ stock.getItemId();
 	}
 	
+	/**
+	 * 新規在庫登録ページ表示.
+	 * @param itemId 商品ID
+	 * @param model モデル
+	 * @return テンプレート名
+	*/
+	@GetMapping("add/{itemId}")
+	public String add(@PathVariable Long itemId, Model model) {
+		model.addAttribute("item", itemService.findOne(itemId));
+		model.addAttribute("shops", shopService.findNoStockShopByItemId(itemId));
+		model.addAttribute("newStockForm", new NewStockForm());
+		return "new-stock";
+	}
+	
+	/**
+	 * 新規在庫登録.
+	 * @param newStockForm 新規在庫登録フォーム
+	 * @param result BindingResult
+	 * @param model モデル
+	 * @return テンプレート名
+	*/
+	@PostMapping("add/submit")
+	public String additionSubmit(@ModelAttribute @Validated NewStockForm newStockForm, BindingResult result, Model model) {
+		if(result.hasErrors()) {
+			return "new-stock";
+		}
+		Stock stock = new Stock();
+		stock.setItemId(newStockForm.getItemId());
+		stock.setShopId(newStockForm.getShopId());
+		stock.setAmount(newStockForm.getInputAmount());
+		stockService.saveStock(stock);
+
+		return "redirect:/items/"+ stock.getItemId();
+	}
+
 }

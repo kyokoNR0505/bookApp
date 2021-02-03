@@ -53,6 +53,9 @@
         <div class="card card-primary mb-3">
             <div class="card-header">
                 <h5 class="card-title">在庫</h5>
+                <div th:object="${item}">
+                    <a th:href="@{/stock/add/{itemId}(itemId=*{id})}" class="btn btn-link">新規在庫登録</a>
+                </div>
             </div>
             <div class="card-body" th:if="!${stocks.size()}">
                 <p>在庫がありません。</p>

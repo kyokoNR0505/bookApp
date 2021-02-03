@@ -14,7 +14,7 @@
         where itemId=#{itemId}
         group by Stock.shopId
     </select>
-    
+
     <select id="findByItemIdAndShopId" resultType="com.example.demo.domain.ShopStock">
         select
              Stock.itemId
@@ -31,7 +31,7 @@
         where itemId=#{itemId}
         and shopId=#{shopId}
     </select>
-    
+
     <insert
         id="insert"
         parameterType="com.example.demo.domain.Stock"

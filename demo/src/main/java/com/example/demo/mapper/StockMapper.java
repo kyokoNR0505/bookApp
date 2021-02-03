@@ -29,7 +29,6 @@ public interface StockMapper {
 	 */
 	ShopStock findByItemIdAndShopId(Long itemId, Long shopId);
 	
-	
 	/**
 	 * 在庫を登録する.
 	 * @param stock 在庫

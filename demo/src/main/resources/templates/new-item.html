@@ -31,7 +31,7 @@
                 <h5 class="card-title">新商品登録</h5>
             </div>
             <div class="card-body">
-                <form th:method="post" th:action="@{/items/new}" th:object="${newItemForm}">
+                <form th:method="post" th:action="@{/items/new/add}" th:object="${newItemForm}">
                     <div class="form-group row">
                         <label class="col-md-4">商品名</label>
                         <input class="col-md-8 form-control" type="text" th:field="*{inputItemName}"/>

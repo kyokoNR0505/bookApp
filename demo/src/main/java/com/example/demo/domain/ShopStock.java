@@ -27,6 +27,8 @@ public class ShopStock {
 	/** 商品名. */
 	private String itemName;
 	
+	/** 著者名. */
+	private String author;
 	
 	/**
 	 * item id getter.
@@ -117,11 +119,27 @@ public class ShopStock {
 	}
 	
 	/**
-	 * item name setter
+	 * item name setter.
 	 * @param itemName
 	 */
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+	
+	/**
+	 * author getter.
+	 * @return author
+	 */
+	public String getAuthor() {
+		return this.author;
+	}
+	
+	/**
+	 * author setter.
+	 * @param author
+	 */
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 }
