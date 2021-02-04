@@ -152,6 +152,8 @@ public class StockController {
 	@PostMapping("add/submit")
 	public String additionSubmit(@ModelAttribute @Validated NewStockForm newStockForm, BindingResult result, Model model) {
 		if(result.hasErrors()) {
+			model.addAttribute("item", itemService.findOne(newStockForm.getItemId()));
+			model.addAttribute("shops", shopService.findNoStockShopByItemId(newStockForm.getItemId()));
 			return "new-stock";
 		}
 		Stock stock = new Stock();

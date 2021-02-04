@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <title>在庫登録</title>
+    <title>新規在庫登録</title>
 </head>
 <body>
 
     <!-- ナビゲーションバーここから -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:3rem">
         <div class="container">
             <a class="navbar-brand" th:href="@{/top}">TOP</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -49,7 +49,7 @@
         </div><!-- /card -->
         <!-- 商品詳細Cardここまで -->
         
-        <!-- 在庫登録Cardここから -->
+        <!-- 新規在庫登録Cardここから -->
         <div class="card card-primary mb-3">
             <div class="card-header">
                 <h5 class="card-title">新規在庫登録</h5>
@@ -69,15 +69,17 @@
                              <form th:method="post" th:action="@{/stock/add/submit}" th:object="${newStockForm}">
                                  <input type="hidden" th:value="${item.id}" name="itemId">
                                  <input type="hidden" th:value="${shop.id}" name="shopId">
-                             <td><input class="form-control" type="text" th:field="*{inputAmount}"/></td>
-                             <td><input type="submit" value="登録" class="btn btn-primary"/></td>
+                                 <td><input class="form-control" type="text" th:field="*{inputAmount}"/></td>
+                                 <td><input type="submit" value="登録" class="btn btn-primary"/>
+                                     <span class="text-danger" th:if="${#fields.hasErrors('inputAmount')}" th:errors="*{inputAmount}"></span>
+                                 </td>
                              </form>
                          </tr>
                      </tbody>
                  </table>
             </div><!-- /card-body -->
         </div><!-- /card -->
-        <!-- 在庫登録Cardここまで -->
+        <!-- 新規在庫登録Cardここまで -->
 
     </div><!-- /container -->
 

@@ -9,7 +9,7 @@
 <body>
 
     <!-- ナビゲーションバーここから -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:3rem">
         <div class="container">
             <a class="navbar-brand" th:href="@{/top}">商品検索TOP</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -30,25 +30,25 @@
             <div class="card-header">
                 <h5 class="card-title">新商品登録</h5>
             </div>
-            <div class="card-body">
+            <div class="card-body col-md-10 offset-md-1">
                 <form th:method="post" th:action="@{/items/new/add}" th:object="${newItemForm}">
                     <div class="form-group row">
-                        <label class="col-md-4">商品名</label>
-                        <input class="col-md-8 form-control" type="text" th:field="*{inputItemName}"/>
+                        <label class="col-md-3">商品名</label>
+                        <input class="col-md-9 form-control" type="text" th:field="*{inputItemName}"/>
                         <div class="text-danger col-md-8" th:if="${#fields.hasErrors('inputItemName')}" th:errors="*{inputItemName}"></div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-4">税抜き価格</label>
-                        <input class="col-md-8 form-control" type="text" th:field="*{inputPrice}"/>
+                        <label class="col-md-3">税抜き価格</label>
+                        <input class="col-md-9 form-control" type="text" th:field="*{inputPrice}"/>
                         <div class="text-danger col-md-8" th:if="${#fields.hasErrors('inputPrice')}" th:errors="*{inputPrice}"></div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-4">著者名</label>
-                        <input class="col-md-8 form-control" type="text" th:field="*{inputAuthor}"/>
+                        <label class="col-md-3">著者名</label>
+                        <input class="col-md-9 form-control" type="text" th:field="*{inputAuthor}"/>
                         <div class="text-danger col-md-8" th:if="${#fields.hasErrors('inputAuthor')}" th:errors="*{inputAuthor}"></div>
                     </div>
                     <div class="form-group row">
-                        <input type="submit" value="登録" class="btn btn-primary"></input>
+                        <div class="mx-auto"><input type="submit" value="登録" class="btn btn-primary"></input></div>
                     </div>
                  </form>
             </div><!-- /card-body -->

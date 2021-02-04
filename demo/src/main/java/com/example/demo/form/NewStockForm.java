@@ -1,5 +1,8 @@
 package com.example.demo.form;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 /**
  * 新規在庫登録フォーム.
  * @author yumikoirisawa
@@ -14,6 +17,8 @@ public class NewStockForm {
 	private Long shopId;
 	
 	/** 入荷数（画面入力値）. */
+	@NotNull(message="入荷数を入力してください。")
+	@Positive(message="入荷数は0以上を入力してください。")
 	private Integer inputAmount;
 
 	

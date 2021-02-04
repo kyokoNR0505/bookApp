@@ -9,7 +9,7 @@
 <body>
 
     <!-- ナビゲーションバーここから -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:3rem">
         <div class="container">
             <a class="navbar-brand" th:href="@{/top}">TOP</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -52,9 +52,11 @@
         <!-- 在庫Cardここから -->
         <div class="card card-primary mb-3">
             <div class="card-header">
-                <h5 class="card-title">在庫</h5>
-                <div th:object="${item}">
-                    <a th:href="@{/stock/add/{itemId}(itemId=*{id})}" class="btn btn-link">新規在庫登録</a>
+                <div class="row">
+                    <h5 class="col-md-10 card-title">在庫</h5>
+                    <div class="col-md-2" th:object="${item}">
+                    <a th:href="@{/stock/add/{itemId}(itemId=*{id})}" class="btn btn-primary">新規在庫登録</a>
+                    </div>
                 </div>
             </div>
             <div class="card-body" th:if="!${stocks.size()}">
