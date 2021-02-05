@@ -55,27 +55,27 @@
                 <h5 class="card-title">新規在庫登録</h5>
             </div>
             <div class="card-body">
-                 <table class="table table-striped">
-                     <thead>
-                         <tr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
                             <th style="width:50%">店舗名</th>
                             <th style="width:10%">在庫数</th>
                             <th style="width:40%"></th>
-                         </tr>
-                     </thead>
-                     <tbody>
-                         <tr th:each="shop:*{shops}" th:object=${shop}>
-                             <td th:text="*{name}"></td>
-                             <form th:method="post" th:action="@{/stock/add/submit}" th:object="${newStockForm}">
-                                 <input type="hidden" th:value="${item.id}" name="itemId">
-                                 <input type="hidden" th:value="${shop.id}" name="shopId">
-                                 <td><input class="form-control" type="text" th:field="*{inputAmount}"/></td>
-                                 <td><input type="submit" value="登録" class="btn btn-primary"/></td>
-                             </form>
-                         </tr>
-                     </tbody>
-                 </table>
-                 <div class="text-danger" th:if="${#fields.hasErrors('newStockForm.inputAmount')}" th:errors="${newStockForm.inputAmount}"></div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <div class="text-danger" th:if="${#fields.hasErrors('newStockForm.inputAmount')}" th:errors="${newStockForm.inputAmount}"></div>
+                        <tr th:each="shop:*{shops}" th:object=${shop}>
+                            <td th:text="*{name}"></td>
+                            <form th:method="post" th:action="@{/stock/add/submit}" th:object="${newStockForm}">
+                                <input type="hidden" th:value="${item.id}" name="itemId">
+                                <input type="hidden" th:value="${shop.id}" name="shopId">
+                                <td><input class="form-control" type="text" th:field="*{inputAmount}"/></td>
+                                <td><input type="submit" value="登録" class="btn btn-primary"/></td>
+                            </form>
+                        </tr>
+                    </tbody>
+                </table>
             </div><!-- /card-body -->
         </div><!-- /card -->
         <!-- 新規在庫登録Cardここまで -->
