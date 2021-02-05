@@ -16,9 +16,9 @@ public class NewStockForm {
 	/** 店舗ID. */
 	private Long shopId;
 	
-	/** 入荷数（画面入力値）. */
-	@NotNull(message="入荷数を入力してください。")
-	@Positive(message="入荷数は0以上を入力してください。")
+	/** 在庫数（画面入力値）. */
+	@NotNull(message="在庫数を入力してください。")
+	@Positive(message="在庫数は0以上を入力してください。")
 	private Integer inputAmount;
 
 	
@@ -64,7 +64,7 @@ public class NewStockForm {
 
 	/**
 	 * input amount setter.
-	 * @param inputAmount 入荷数（画面入力値）
+	 * @param inputAmount 在庫数（画面入力値）
 	 */
 	public void setInputAmount(Integer inputAmount) {
 		this.inputAmount = inputAmount;

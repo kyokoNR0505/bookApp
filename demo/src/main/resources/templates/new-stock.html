@@ -9,7 +9,7 @@
 <body>
 
     <!-- ナビゲーションバーここから -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:3rem">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <a class="navbar-brand" th:href="@{/top}">TOP</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -58,9 +58,9 @@
                  <table class="table table-striped">
                      <thead>
                          <tr>
-                             <th style="width: 50%">店舗名</th>
-                             <th style="width: 10%">在庫数</th>
-                             <th style="width: 40%"></th>
+                            <th style="width:50%">店舗名</th>
+                            <th style="width:10%">在庫数</th>
+                            <th style="width:40%"></th>
                          </tr>
                      </thead>
                      <tbody>
@@ -70,13 +70,12 @@
                                  <input type="hidden" th:value="${item.id}" name="itemId">
                                  <input type="hidden" th:value="${shop.id}" name="shopId">
                                  <td><input class="form-control" type="text" th:field="*{inputAmount}"/></td>
-                                 <td><input type="submit" value="登録" class="btn btn-primary"/>
-                                     <span class="text-danger" th:if="${#fields.hasErrors('inputAmount')}" th:errors="*{inputAmount}"></span>
-                                 </td>
+                                 <td><input type="submit" value="登録" class="btn btn-primary"/></td>
                              </form>
                          </tr>
                      </tbody>
                  </table>
+                 <div class="text-danger" th:if="${#fields.hasErrors('newStockForm.inputAmount')}" th:errors="${newStockForm.inputAmount}"></div>
             </div><!-- /card-body -->
         </div><!-- /card -->
         <!-- 新規在庫登録Cardここまで -->

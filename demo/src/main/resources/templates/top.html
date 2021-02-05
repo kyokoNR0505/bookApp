@@ -9,7 +9,7 @@
 <body>
 
     <!-- ナビゲーションバーここから -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:3rem">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
         <div class="container">
             <a class="navbar-brand" th:href="@{/top}">商品検索TOP</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -28,7 +28,7 @@
             <div class="col-md-10 offset-md-1">
                 <h4>商品検索</h4>
                 <form th:action="@{/items/search}" th:method="post" th:object="${searchForm}">
-                    <div class="form-group" style="margin-top:2rem">
+                    <div class="form-group mt-4">
                         <input th:field="*{itemName}" type="text" class="form-control" placeholder="商品名を入力してください">
                         <input th:field="*{author}" type="text" class="form-control" placeholder="著者名を入力してください">
                     </div>
