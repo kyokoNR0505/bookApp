@@ -68,9 +68,11 @@
                         <tr th:each="shop:*{shops}" th:object=${shop}>
                             <td th:text="*{name}"></td>
                             <form th:method="post" th:action="@{/stock/add/submit}" th:object="${newStockForm}">
-                                <input type="hidden" th:value="${item.id}" name="itemId">
-                                <input type="hidden" th:value="${shop.id}" name="shopId">
-                                <td><input class="form-control" type="text" th:field="*{inputAmount}"/></td>
+                                <td>
+                                    <input type="hidden" th:value="${item.id}" name="itemId">
+                                    <input type="hidden" th:value="${shop.id}" name="shopId">
+                                    <input class="form-control" type="text" th:field="*{inputAmount}"/>
+                                </td>
                                 <td><input type="submit" value="登録" class="btn btn-primary"/></td>
                             </form>
                         </tr>
